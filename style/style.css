@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    height: 100%;
+    background: rgba(226, 224, 224, 0.8);
+    backdrop-filter: blur(42px);
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: 1fr;
+}
+
+/* sidebar start */
+
+.sidebar {
+    background: #FFFFFF;
+    border-radius: 0 20px 20px 0;
+   
+}
+
+.sidebar__logo {
+
+}
+
+.sidebar__title {
+
+}
+
+.sidebar__list {
+
+}
+
+.li__item {
+
+}
+
+.sidebar__li__text {
+
+}
+
+/* sidebar end */
+
+/* nav */
+
+/* grid start */
+.content {
+    
+}
+
+.content__nav {
+    
+}
+
+.content__nav__link {
+
+}
+
+.content__grid {
+
+}
+
+.grid__item {
+
+}
+/* grid end */
