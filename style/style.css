@@ -78,6 +78,10 @@ body, h1 {
     height: 23px;
 }
 
+label, 
+input {
+    display: none;
+}
 /* nav */
 
 .content {
@@ -86,9 +90,7 @@ body, h1 {
    width: 100%;
 }
 
-.content label, .content input {
-    display: none;
-}
+
 
 .content__nav {
     padding-top: 26px;
@@ -118,7 +120,6 @@ body, h1 {
 .content__nav li {
     padding: 10px 20px;
     position: relative;
-    /* margin-right: 10px;  */
 }
 
 .content__nav li:not(:last-child) {  
@@ -136,13 +137,9 @@ body, h1 {
     background-color: transparent;
 }
 
-.content__nav a:hover::before {
+.content__nav .content__nav__link:hover::before {
     width: calc(100% - 40px);
     background-color: red;
-}
-
-.content__nav a:hover::before:nth-child(n+5) {    /*почему для 5 и 6 li - картинок в нав не получается убрать ховерное состояние?*/
-    background-color: transparent;
 }
 
     /* grid start */
@@ -238,28 +235,30 @@ body, h1 {
     .content__nav a:hover::before {
         background-color: transparent;
     }
+
+    
 }
 
         /* mob */
 
-@media (max-width:760px) {
-    .sidebar {
-        display: none;
-    }
-  
+@media (max-width:760px) {  
     .wrapper {
         grid-template-columns: auto;
     }
-
-    .content label {
-        display: block;
-    }   
-
+    .sidebar__list li {
+        padding-left: 0;
+    }
+    .content {
+        position: relative;
+    }
     .content__nav {
         padding: 0;
         margin-bottom: 10px;
         display: grid;
-        grid-template-columns: 32px auto;
+        grid-template-columns: 1fr;
+        position: absolute;
+        top: -30px;
+        right: 20px;
      }
 
      .content__nav li {
@@ -273,23 +272,38 @@ body, h1 {
     .content__nav .material-icons {
         color: #000;
         font-size: 32px;
+     }   
+     /* burger */
+    .sidebar__logo,
+    .sidebar__title {
+        display: none;
+    }
+    .sidebar {
+        padding-top: 20px;
+        padding-left: 20px;
+        background:  rgba(246, 238, 238, 0.918);
+    }
+    label {
+        display: block;
      }
 
      .sidebar__list {
-        text-align: center;
+        z-index: 1;
+        justify-content: center;
+        align-items: center;
         position: fixed;
-        top: 52px;
+        top: 62px;
         left: 20px;
-        width: 190px;
-        height: 315px;
-        background-color: #FFFFFF;
+        width: calc(100% - 9%);
+        height: 100%;
+        background-color: rgba(210, 205, 205, 0.95);
         transform: translateX(-200%);
         transition: .3s all ease-in-out;
      }
 
-     input:checked~.sidebar__list { /*почему не срабатывает раскрытие выпадающего меню?*/
+
+     input:checked~.sidebar__list {
         transform: translateX(0);
-     }   
-     
+     }     
 }
 
